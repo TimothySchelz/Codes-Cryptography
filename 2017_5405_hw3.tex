@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{mathptmx,amssymb,amsmath,amscd,enumerate}
+\setlength{\textwidth}{16.5cm}
+\setlength{\oddsidemargin}{-0.1cm}
+\setlength{\evensidemargin}{-0.1cm}
+\setlength{\textheight}{23cm}
+\setlength{\topmargin}{-1.3cm}
+
+\def\ge{\geqslant}
+\def\le{\leqslant}
+\def\phi{\varphi}
+\def\to{\longrightarrow}
+\def\mapsto{\longmapsto}
+\def\la{\langle}
+\def\ra{\rangle}
+\def\lcm{\operatorname{lcm}}
+\renewcommand{\mod}{\,\operatorname{mod}\,}
+\renewcommand{\arraystretch}{1.5}
+
+\def\bar{\overline}
+\def\image{\operatorname{Image}}
+\def\Perm{\operatorname{Perm}}
+
+\def\CC{{\mathbb C}}
+\def\FF{{\mathbb F}}
+\def\NN{{\mathbb N}}
+\def\QQ{{\mathbb Q}}
+\def\RR{{\mathbb R}}
+\def\ZZ{{\mathbb Z}}
+
+\pagestyle{empty}
+
+\begin{document}
+\noindent\textbf{Math 5405, Spring 2017, Assignment 3} \hfill \textbf{Due in class Tuesday, March 21}
+\bigskip
+
+\begin{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item An RSA-encrypted message reads $8059008699$ where $e=113$ and the modulus $m=10993522499$ is a product of two primes that differ by $2$. Decrypt this, and express the final answer in terms of the nine letter alphabet from the lecture notes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Compute $255^2$ and $317^2$ modulo $64777$, and use these to factor $64777$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Using the quadratic sieve method, factor \ $n=46698343$. List only the congruences that you use to construct
+\[
+x^2\equiv y^2\mod n.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Determine if $561$ is a square modulo the prime $1151$ using (a) only Legendre symbols, and (b) Jacobi symbols.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Use the Solovay-Strassen test to show that the following numbers are composite:
+\[
+\text{(a)}\ 899\quad\text{(b)}\ 1729\quad\text{(c)}\ 3599
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item We saw how to solve $x^2\equiv a\mod p$ when $p\equiv3\mod 4$; here is an analogue for $p\equiv5\mod 8$:
+
+Suppose $a$ is a quadratic residue modulo a prime $p$ with $p\equiv 5\mod 8$.
+\begin{enumerate}
+\item Show that $a^{(p-1)/4}\equiv\pm1\mod p$.
+\item If $a^{(p-1)/4}\equiv1\mod p$, prove that the solutions of $x^2\equiv a\mod p$ are $\pm a^{(p+3)/8}$.
+\item If $a^{(p-1)/4}\equiv-1\mod p$, prove that the solutions of $x^2\equiv a\mod p$ are $\pm 2a (4a)^{(p-5)/8}$.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Consider the prime $p=5643653$. Using the previous problem, solve the following in $\ZZ/p$.
+\[
+\text{(a)}\ x^2=435645\qquad\text{(b)}\ x^2=1892117
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Compute $(1,5)+(9,3)$ on the elliptic curve $y^2=x^3+2x+3\mod 19$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Complete the addition table below where $P=(-1,0)$, \ $Q=(0,1)$, and $R=(2,3)$, are points on the elliptic curve $y^2=x^3+1$. (This shows that these six points form a subgroup.)
+
+\[
+\begin{tabular}{|r||c|c|c|c|c|c|}
+\hline
+$+$ & $\infty$ & $P$ & $Q$ & $-Q$ & $R$ & $-R$\\
+\hline
+\hline
+$\infty$ & \phantom{$-Q$} & \phantom{$-Q$} & \phantom{$-Q$} & \phantom{$-Q$} & \phantom{$-Q$} & \\
+\hline
+$P$ & & & & & & \\
+\hline
+$Q$ & & & & & & \\
+\hline
+$-Q$ & & & & &  & \\
+\hline
+$R$ & & & & & & \\
+\hline
+$-R$ & & & &  & & \\
+\hline
+\end{tabular}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Determine the number of elements in the elliptic curve group of $y^2=x^3+8\mod 19$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{enumerate}
+\end{document}
