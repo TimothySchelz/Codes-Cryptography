@@ -106,18 +106,20 @@ print("\nQuestion 3\n")
 # TODO: put in a loop and find some squares
 n=2593863379
 rootn = math.floor(math.sqrt(n))
-for i in range(1, 20):
-  m=((rootn+i) % n);
-  print (m);
 
-  print(str(factor(m**2 % n)))
+for i in range(1, 1000):
+  number=int(rootn+i);
+  square = pow(number, 2, n)
+  # check if we have a square
+  if (math.floor(math.sqrt(square))**2) == square :
+  	print (number)
+  	factors = factor(square)
+  	print(str(factors))
+  	for index in range(0, len(factors) :
+  		
 
-print("This tells us that 50930^2 = 3^2*13^2")
+  	PossibleFactor = egcd(number - , n)[0]
 
-
-possibleFactor = egcd((50930-((3**2)*(13**2))), n)
-
-print("egcd gives us: " + str(possibleFactor))
 
 # Question 4
 print("\nQuestion 4\n")
