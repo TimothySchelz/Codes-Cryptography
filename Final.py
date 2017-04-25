@@ -103,7 +103,8 @@ print("The number of SS witnesses is: " + str(numOfWit))
 # Question 3
 print("\nQuestion 3\n")
 
-
+M = 2415782808
+e = 17
 n=2593863379
 rootn = math.floor(math.sqrt(n))
 
@@ -131,9 +132,18 @@ for i in range(1, 1000000):
 		print("Possible Factor:\t\t\t" + str(Factor))
 
 print("This shows that gcd(662051-50423, n) = 50969 and so 50969 is a factor")
-otherFactor = (n/50969)
+otherFactor = 50891 #python is being stupid with it's 
 print("The other factor is: " + str(otherFactor))
 
+pmin1 = 50969 - 1
+qmin1 = otherFactor - 1
+pmin1qmin1 = pmin1*qmin1
+print(str(pmin1) + "\t" + str(Factor))
+print(str(qmin1) + "\t" + str(otherFactor))
+d = modinv(e, pmin1qmin1)
+
+message = pow(M, d, n)
+print("The message is:\n" + str(messgae))
 
 # Question 4
 print("\nQuestion 4\n")
