@@ -103,22 +103,36 @@ print("The number of SS witnesses is: " + str(numOfWit))
 # Question 3
 print("\nQuestion 3\n")
 
-# TODO: put in a loop and find some squares
+
 n=2593863379
 rootn = math.floor(math.sqrt(n))
 
-for i in range(1, 1000):
+for i in range(1, 1000000):
   number=int(rootn+i);
   square = pow(number, 2, n)
   # check if we have a square
   if (math.floor(math.sqrt(square))**2) == square :
-  	print (number)
-  	factors = factor(square)
-  	print(str(factors))
-  	for index in range(0, len(factors) :
-  		
 
-  	PossibleFactor = egcd(number - , n)[0]
+  	factors = factor(square)
+  	
+
+	# Multiply the factors of the root
+	subtr = 1;
+	for i in range(0, len(factors)):
+		if i%2 == 0:
+			subr = subtr*(factors[i])
+	
+	Factor = egcd(number - subr, n)[0]
+	
+	# Print out the successes
+	if (Factor != 1 and Factor != n):
+		print (number)
+		print(str(factors))
+		print("Possible Factor:\t\t\t" + str(Factor))
+
+print("This shows that gcd(662051-50423, n) = 50969 and so 50969 is a factor")
+otherFactor = (n/50969)
+print("The other factor is: " + str(otherFactor))
 
 
 # Question 4
