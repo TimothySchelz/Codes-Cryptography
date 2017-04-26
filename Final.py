@@ -146,15 +146,20 @@ print("d = " + str(d))
 message = pow(M, d, n)
 print("The message is:\n" + str(message))
 
+
+
+
 # Question 4
 print("\nQuestion 4\n")
 # This doesn't work!!!!!!!!!!!!!!!!!
 
-n = 7#9999999900000001
+n = 9999999900000001
 nmin1 = n-1
 rootn = math.sqrt(n)
 Factors = factor(nmin1)
 print(str(Factors))
+
+print("sqrt(n) = " + str(rootn))
 
 #construct s and r
 s = 1
@@ -162,54 +167,45 @@ r = 1
 i = 0
 sFactors = []
 rFactors = []
-sFactors.append(1)
-rFactors.append(1)
-
-
-for i in range(0, len(Factors)):
+length = len(Factors)
+for i in range(1, length + 1):
 	if(s<=rootn):
-		s = s*Factors[i]
-		sFactors.append(Factors[i])
+		s = s*Factors[length - i]
+		sFactors.append(Factors[length - i])
 	else:
-		r = r*Factors[i]
-		rFactors.append(Factors[i])
+		r = r*Factors[length - i]
+		rFactors.append(Factors[length - i])
 
-print("s = " + str(s))
-print("r = " + str(r))
+print("s = " + str(s) + " = " + str(sFactors))
+print("r = " + str(r) + " = " + str(rFactors))
 
-print("Before Test, after getting s,r")
-# Grab "random b" and construct a
-for b in range(0,3):
-	a = pow(b,r)
+for i in range(2, 1000000):
+	a = pow(i,r,n)
+	power = pow(a,s,n)
 
-	#check a's order
-	if(pow(a,s,n) != 1):
-		continue
+	gcd1 = egcd(pow(a,s/5,n)-1, n)[0]
+	gcd2 = egcd(pow(a,s/11,n)-1, n)[0]
+	gcd3 = egcd(pow(a,s/73,n)-1, n)[0]
+	gcd4 = egcd(pow(a,s/101,n)-1, n)[0]
+	gcd5 = egcd(pow(a,s/137,n)-1, n)[0]
 
-	print("Before Inner Loop")
-	gcdWorksSoFar = True
-	#Check gcds
-	for q in sFactors:
-		print("q = " + str(q))
-		if (egcd(pow(a,s/q)-1, n)[0] != 1):
-			gcdWorksSoFar = False
-			print("Hit Break")
-			break
-		print("gcd == 1")
 
-	print("After Inner Loop")
-
-	if(gcdWorksSoFar == False):
-		continue
-
-	print(str(n) + " is prime!")
-	print("s = " + str(s) + " = " + str(sFactors))
-	print("a = " + str(a))
+	if (power == 1 and gcd1 == 1 and gcd2 == 1 and gcd3 == 1 and gcd4 == 1 and gcd5 == 1):	
+		print("a = " + str(a))
+		print("a^s mod n = " + str(power))
+		print("gcd(pow(a,s/5,n)-1, n) = " + str(gcd1))
+		print("gcd(pow(a,s/11,n)-1, n) = " + str(gcd2))
+		print("gcd(pow(a,s/73,n)-1, n) = " + str(gcd3))
+		print("gcd(pow(a,s/101,n)-1, n) = " + str(gcd4))
+		print("gcd(pow(a,s/137,n)-1, n) = " + str(gcd5))
+		print("\n\nn is prime!\n\n")
+		break
 
 
 
-
-# Question 4
+# Question 6
 print("\nQuestion 6\n")
+
+
 
 print("Done")
