@@ -132,18 +132,84 @@ for i in range(1, 1000000):
 		print("Possible Factor:\t\t\t" + str(Factor))
 
 print("This shows that gcd(662051-50423, n) = 50969 and so 50969 is a factor")
-otherFactor = 50891 #python is being stupid with it's 
-print("The other factor is: " + str(otherFactor))
+p = 50969
+q = 50891 #python is being stupid and randomly changing values of variables!!!
+print("The other factor is: " + str(q))
 
-pmin1 = 50969 - 1
-qmin1 = otherFactor - 1
+pmin1 = p - 1
+qmin1 = q - 1
 pmin1qmin1 = pmin1*qmin1
-print(str(pmin1) + "\t" + str(Factor))
-print(str(qmin1) + "\t" + str(otherFactor))
+print("p-1 = " + str(pmin1))
+print("q-1 = " + str(qmin1))
 d = modinv(e, pmin1qmin1)
-
+print("d = " + str(d))
 message = pow(M, d, n)
-print("The message is:\n" + str(messgae))
+print("The message is:\n" + str(message))
 
 # Question 4
 print("\nQuestion 4\n")
+# This doesn't work!!!!!!!!!!!!!!!!!
+
+n = 7#9999999900000001
+nmin1 = n-1
+rootn = math.sqrt(n)
+Factors = factor(nmin1)
+print(str(Factors))
+
+#construct s and r
+s = 1
+r = 1
+i = 0
+sFactors = []
+rFactors = []
+sFactors.append(1)
+rFactors.append(1)
+
+
+for i in range(0, len(Factors)):
+	if(s<=rootn):
+		s = s*Factors[i]
+		sFactors.append(Factors[i])
+	else:
+		r = r*Factors[i]
+		rFactors.append(Factors[i])
+
+print("s = " + str(s))
+print("r = " + str(r))
+
+print("Before Test, after getting s,r")
+# Grab "random b" and construct a
+for b in range(0,3):
+	a = pow(b,r)
+
+	#check a's order
+	if(pow(a,s,n) != 1):
+		continue
+
+	print("Before Inner Loop")
+	gcdWorksSoFar = True
+	#Check gcds
+	for q in sFactors:
+		print("q = " + str(q))
+		if (egcd(pow(a,s/q)-1, n)[0] != 1):
+			gcdWorksSoFar = False
+			print("Hit Break")
+			break
+		print("gcd == 1")
+
+	print("After Inner Loop")
+
+	if(gcdWorksSoFar == False):
+		continue
+
+	print(str(n) + " is prime!")
+	print("s = " + str(s) + " = " + str(sFactors))
+	print("a = " + str(a))
+
+
+
+
+# Question 4
+print("\nQuestion 6\n")
+
+print("Done")
